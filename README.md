@@ -2,7 +2,8 @@
 
 Automate writing blog posts by [openai's API](https://openai.com/api/)
 
-Get your API keys from the OpenAI dashboard and store as an enviroment variables in a .env file. See the .env.sample file for reference. Only the `OPENAI_API_KEY` is required.
+Get your API keys from the OpenAI dashboard and store as enviroment variables in a .env file. 
+See the .env.sample file for reference. Only the `OPENAI_API_KEY` is required.
 
 Steps - 
 1. Clone this repo
