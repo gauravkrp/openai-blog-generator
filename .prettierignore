@@ -1,0 +1,11 @@
+# Ignore artifacts:
+build
+coverage
+.nuxt
+dist
+static
+_reset.scss
+_bootstrap-grid.scss
+package.json
+package-lock.json
+yarn.lock

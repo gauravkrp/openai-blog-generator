@@ -1,0 +1,66 @@
+{
+  "name": "xplorai-be",
+  "version": "1.0.0",
+  "description": "Xplorai",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "build": "npx tsc",
+    "start": "node build/index.js",
+    "start1": "ts-node -r tsconfig-paths/register ./src",
+    "dev": "ts-node-dev --respawn --pretty --transpile-only --exit-child --watch -r tsconfig-paths/register ./src ",
+    "lint": "eslint . --ext .ts",
+    "build-run": "npm run build && npm run start"
+  },
+  "keywords": [
+    "Xplorai"
+  ],
+  "_moduleAliases": {
+    "@src": "./build",
+    "@app": "./build/app",
+    "@config": "./build/config",
+    "@routes": "./build/routes"
+  },
+  "author": "Gaurav Pandey | https://github.com/gauravkrp",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/cookie-parser": "^1.4.3",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "@types/helmet": "^4.0.0",
+    "@types/module-alias": "^2.0.1",
+    "@types/node": "^18.11.10",
+    "@types/wpapi": "^1.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "concurrently": "^7.6.0",
+    "eslint": "^8.29.0",
+    "husky": "^8.0.2",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.0",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.1.1",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1267.0",
+    "axios": "^1.2.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^6.0.1",
+    "module-alias": "^2.2.2",
+    "mongodb": "^4.12.1",
+    "mongoose": "^6.7.5",
+    "mysql-import": "^5.0.26",
+    "mysql2": "^2.3.3",
+    "openai": "^3.1.0",
+    "qs": "^6.11.0",
+    "translate-google-api": "^1.0.4",
+    "wpapi": "^1.2.2"
+  }
+}
