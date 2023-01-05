@@ -47,7 +47,7 @@ router.post('/createBlogPost', async (req, res) => {
 
   try {
     let wp: unknown;
-    const result = await openai.complete({ prompt, model, max_tokens });
+    const result = await openai.writeArticle({ prompt, model, max_tokens });
 
     if (postToWP) {
       const { data } = await wordpress.createPost({
@@ -58,6 +58,25 @@ router.post('/createBlogPost', async (req, res) => {
     }
 
     return res.status(200).send({ result, wp });
+  } catch (error) {
+    console.error('Error', error?.response?.data || error?.message || error);
+    return res.status(500).send({ error });
+  }
+});
+
+router.post('/generate', async (req, res) => {
+  const { body } = req;
+  const { prompt, model, max_tokens } = body;
+  // reject with 400 if body is not valid or empty
+  if (!body || typeof body !== 'object' || Object.keys(body).length === 0) {
+    return res.status(400).send({ error: 'Bad Request, request body missing!' });
+  } else if (!body.prompt) {
+    return res.status(400).send({ error: 'prompt missing!' });
+  }
+
+  try {
+    const result = await openai.complete({ prompt, model, max_tokens });
+    return res.status(200).send({ result });
   } catch (error) {
     console.error('Error', error?.response?.data || error?.message || error);
     return res.status(500).send({ error });
