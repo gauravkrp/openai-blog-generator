@@ -109,3 +109,5 @@ yarn.lock
 package-lock.json
 
 resources/
+.yarn/
+**/.DS_Store

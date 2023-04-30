@@ -53,7 +53,7 @@ class OpenAI {
   }: IOpenAICreateCompletion) {
     const { data } = await openAiInstance.createCompletion({
       model: model || 'text-davinci-003', //'text-babbage-001' || model, //"text-davinci-002", 'davinci',
-      prompt: `Write a detailed article of 1500 words with excerpt and blog sections on: ${prompt}`,
+      prompt: `Write a detailed article of 2000 words with excerpt and blog sections on: ${prompt}`,
       max_tokens,
       temperature,
       top_p,
